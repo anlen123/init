@@ -781,7 +781,8 @@ shijiu(){
     cd proxychains-ng
 	./configure --prefix=/usr --sysconfdir=/etc
 	make
-	make install make install-config 
+	make install 
+    make install-config 
     status=$(cat /etc/proxychains.conf | grep 'http 127.0.0.1 1081')
     if [ $status=="" ] ;then 
         echo "http 127.0.0.1 1081" >> /etc/proxychains.conf 
